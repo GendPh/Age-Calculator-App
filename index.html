@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="public/assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./src/css/tailwind/output.css">
+
+
+  <title>Frontend Mentor | Age calculator app</title>
+</head>
+
+<body class="bg-Neutral-Light-Grey px-4 pt-10">
+
+  <section class="bg-Neutral-Off-White px-4 py-6 rounded-3xl rounded-br-[150px]">
+    <div id="input-zone">
+      <div class="input-field">
+        <label for="day">Day</label>
+        <input type="number" name="day" id="day" min="1" max="31" value="5">
+        <span class="error">This field is required</span>
+      </div>
+      <div class="input-field">
+        <label for="month">Month</label>
+        <input type="number" name="month" id="month" min="1" max="12" value="5">
+        <span class="error">Must be a valid month</span>
+      </div>
+      <div class="input-field">
+        <label for="year">Year</label>
+        <input type="number" name="year" id="year" min="1" value="1998">
+        <span class="error">Must be in the past</span>
+      </div>
+    </div>
+
+    <div id="button-group">
+      <hr>
+      <button id="active-btn" type="button">
+        <img src="./public/assets/images/icon-arrow.svg" alt="array img" width="35">
+      </button>
+    </div>
+
+    <div id="response">
+      <p><span id="responseYear">38</span> years</p>
+      <p><span id="responseMonth">- -</span> months</p>
+      <p><span id="responseDay">- -</span> days</p>
+    </div>
+  </section>
+
+</body>
+
+</html>
