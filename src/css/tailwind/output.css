@@ -557,17 +557,29 @@ video {
   .input-field{
     letter-spacing: 0.1em;
   }
-  .input-field {
-    & label{
-      font-size: 1.125rem;
-      line-height: 1.75rem;
+  @media (min-width: 1024px){
+    .input-field{
+      max-width: 210px;
     }
+  }
+  @media (min-width: 1024px){
+    .input-field{
+      flex: 1 1 auto;
+    }
+  }
+  .input-field {
     & label{
       text-transform: uppercase;
     }
     & label{
       --tw-text-opacity: 1;
       color: hsl(0 1% 44% / var(--tw-text-opacity));
+    }
+    @media (min-width: 768px){
+      & label{
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+      }
     }
     & input{
       margin-top: 0.5rem;
@@ -590,7 +602,11 @@ video {
       background-color: transparent;
     }
     & input{
-      padding: 0.75rem;
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+    }
+    & input{
+      padding-left: 0.75rem;
     }
     & input{
       font-size: 1.5rem;
@@ -600,6 +616,29 @@ video {
       --tw-text-opacity: 1;
       color: hsl(0 0% 8% / var(--tw-text-opacity));
     }
+    & input{
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+    }
+    & input:focus{
+      --tw-border-opacity: 1;
+      border-color: hsl(259 100% 65% / var(--tw-border-opacity));
+    }
+    & input:focus{
+      caret-color: hsl(259, 100%, 65%);
+    }
+    @media (min-width: 768px){
+      & input{
+        font-size: 32px;
+      }
+    }
+    & input {
+      &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
     .error{
       font-size: 0.75rem;
       line-height: 1rem;
@@ -607,6 +646,32 @@ video {
     .error{
       --tw-text-opacity: 1;
       color: hsl(0 100% 67% / var(--tw-text-opacity));
+    }
+    @media (min-width: 768px){
+      .error{
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+      }
+    }
+    &.fail {
+      & label{
+        --tw-text-opacity: 1;
+        color: hsl(0 100% 67% / var(--tw-text-opacity));
+      }
+      & input{
+        --tw-border-opacity: 1;
+        border-color: hsl(0 100% 67% / var(--tw-border-opacity));
+      }
+    }
+  }
+  &.fail {
+    & label{
+      --tw-text-opacity: 1;
+      color: hsl(0 100% 67% / var(--tw-text-opacity));
+    }
+    & input{
+      --tw-border-opacity: 1;
+      border-color: hsl(0 100% 67% / var(--tw-border-opacity));
     }
   }
 }
@@ -639,8 +704,7 @@ video {
     background-color: hsl(0 1% 44% / var(--tw-bg-opacity));
   }
   #active-btn {
-    width: 70px;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1/1
   }
   #active-btn{
     position: relative;
@@ -656,6 +720,9 @@ video {
     display: flex;
   }
   #active-btn{
+    width: 4rem;
+  }
+  #active-btn{
     align-items: center;
   }
   #active-btn{
@@ -668,6 +735,36 @@ video {
     --tw-bg-opacity: 1;
     background-color: hsl(259 100% 65% / var(--tw-bg-opacity));
   }
+  #active-btn:hover{
+    --tw-bg-opacity: 1;
+    background-color: hsl(0 0% 8% / var(--tw-bg-opacity));
+  }
+  @media (min-width: 768px){
+    #active-btn{
+      width: 5rem;
+    }
+  }
+  @media (min-width: 1024px){
+    #active-btn{
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+  }
+  @media (min-width: 1024px){
+    #active-btn{
+      margin-left: auto;
+    }
+  }
+  #active-btn {
+    & img{
+      width: 2rem;
+    }
+    @media (min-width: 768px){
+      & img{
+        width: 2.5rem;
+      }
+    }
+  }
 }
 
 #response{
@@ -677,6 +774,15 @@ video {
   font-style: italic;
   --tw-text-opacity: 1;
   color: hsl(0 0% 8% / var(--tw-text-opacity));
+}
+
+@media (min-width: 768px){
+  #response{
+    font-size: 60px;
+  }
+}
+
+#response {
   & span{
     font-size: 60px;
   }
@@ -684,14 +790,24 @@ video {
     --tw-text-opacity: 1;
     color: hsl(259 100% 65% / var(--tw-text-opacity));
   }
+  @media (min-width: 768px){
+    & span{
+      font-size: 70px;
+    }
+  }
+}
+
+.mx-auto{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.max-w-3xl{
+  max-width: 48rem;
 }
 
 .rounded-3xl{
   border-radius: 1.5rem;
-}
-
-.rounded-br-\[100px\]{
-  border-bottom-right-radius: 100px;
 }
 
 .rounded-br-\[150px\]{
@@ -720,4 +836,16 @@ video {
 
 .pt-10{
   padding-top: 2.5rem;
+}
+
+@media (min-width: 1024px){
+  .lg\:px-10{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .lg\:py-8{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 }
