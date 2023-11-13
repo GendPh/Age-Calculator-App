@@ -83,7 +83,7 @@ confirmBtn.addEventListener("click", () => {
 
   let resultBirthday = {
     days: Math.abs(Math.floor(remainingDays % 30)),
-    months: Math.abs(Math.floor(remainingDays / 30)),
+    months: Math.abs(dateObject.currentMonth - birthdayInfo.month),
     years: Math.abs(Math.floor(dateObject.currentYear - birthdayInfo.year)),
   }
   console.log(dateObject)
